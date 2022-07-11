@@ -9,7 +9,7 @@ class BlogPost (models.Model):
 
     title = models.CharField(max_length=200, unique=True)
     author = models.ForeignKey(
-        User, on_delete=models.PROTECT, related_name="Post")
+        User, on_delete=models.CASCADE, related_name="Post")
     slug = models.CharField(max_length=130, unique=True)
     updated_on = models.DateTimeField(auto_now=True)
     published_on = models.DateTimeField(auto_now=True)
@@ -22,8 +22,8 @@ class BlogPost (models.Model):
     likes = models.ManyToManyField(
         User, related_name='blog_likes', blank=True)
 
-    class Meta:
-        ordering = ['-published_on']
+class Meta:
+    ordering = ['-published_on']
 
     def __str__(self):
         return self.title
@@ -45,3 +45,4 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
+

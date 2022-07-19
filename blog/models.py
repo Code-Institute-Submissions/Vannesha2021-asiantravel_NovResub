@@ -1,16 +1,18 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from django.utils.text import slugify
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
 
-class BlogPost (models.Model):
+class BlogPost(models.Model):
 
     title = models.CharField(max_length=200, unique=True)
-    author = models.ForeignKey(
-        User, on_delete=models.PROTECT, related_name="Post")
     slug = models.CharField(max_length=130, unique=True)
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="BlogPost"
+    )
     updated_on = models.DateTimeField(auto_now=True)
     published_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
@@ -31,6 +33,11 @@ class BlogPost (models.Model):
     def number_of_likes(self):
         return self.likes.count()
 
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+        return super().save(*args, **kwargs)
+
 
 class Comment(models.Model):
     post = models.ForeignKey(BlogPost, on_delete=models.CASCADE, related_name="comments")
@@ -45,3 +52,16 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
+
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, blank=True, null=True)
+    bio = models.TextField(blank=True, null=True)
+    facebook = models.CharField(max_length=300, blank=True, null=True)
+    instagram = models.CharField(max_length=300, blank=True, null=True)
+    linkedin = models.CharField(max_length=300, blank=True, null=True)
+    
+    def __str__(self):
+        return str(self.user)
+
+

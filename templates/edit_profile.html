@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<strong>
+    <br/><br/>
+    <div class="col text-center">
+        <div class="form-group">
+            <form class = "d-inline" action="{% url 'edit_profile' %}" method="POST">
+                {% csrf_token %}
+                {{ form.as_p}}
+                <div class="col text-center">
+                    <button class="btn btn-dark">Edit Profile</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</strong>
+{% endblock %}

@@ -9,6 +9,11 @@ STATUS = ((0, "Draft"), (1, "Published"))
 class BlogPost(models.Model):
 
     title = models.CharField(max_length=200, unique=True)
+<<<<<<< HEAD
+=======
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="Post")
+>>>>>>> 4613e5313a0deae7119a7776878a763903db640f
     slug = models.CharField(max_length=130, unique=True)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="BlogPost"
@@ -24,8 +29,8 @@ class BlogPost(models.Model):
     likes = models.ManyToManyField(
         User, related_name='blog_likes', blank=True)
 
-    class Meta:
-        ordering = ['-published_on']
+class Meta:
+    ordering = ['-published_on']
 
     def __str__(self):
         return self.title

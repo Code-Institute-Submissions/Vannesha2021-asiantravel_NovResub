@@ -1,4 +1,9 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+![Asian Travel logo](/static/css/images/logo.png)
+
+
+## Introduction
+
+
 
 Welcome Vannesha,
 

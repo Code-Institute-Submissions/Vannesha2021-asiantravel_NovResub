@@ -184,7 +184,6 @@ class EditProfileView (View):
     success_url = 'edit_profile.html'
     
     def get(self, request, *args, **kwargs):
-        print("Hello123")
         user = self.request.user
         profile = ProfileModel.objects.get(user=user)
         form = ProfileForm (instance=profile)

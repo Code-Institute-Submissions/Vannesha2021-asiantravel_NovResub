@@ -2,112 +2,216 @@
 
 
 ## Introduction
+With the Asian Travel blog, users benefit from a wide range of extensive functionality.
+
+Users can register for an account, login, logout, and perform wide-ranging blog administrative tasks including creating a post, creating a draft, delete and manage posts, approve comments and of course delete posts. Users can also have a profile, which can be created and edited, and displayed to other users. Unauthenticated users meanwhile are able to view and open posts, view comments, comment, like and unlike posts, view a list of posts, and search for a specific post. 
+
+## Built with
+Python & Django
+
+## Built with
+
+This project began with firstly generating the concept for the blog, before ideating the desirable user experience, actions and features - and the feasibility thereof. 
+Following this, a high-level technical approach and interdependency mapping was carried out that would allow all necessary functionality to be created and included within the product, and identify areas of functionality overlap within the blog.
+The high-level technical approach permitted the decomposition of the work into user stories, which were created thus enabling development to commence. 
+Following development work, extensive testing and validation was carried out to ensure code hygiene, performance and functionality for users. 
+
+
+## User Experience (UX)
+The Asian Travel blog is primarily designed for ease of navigation, readership and administration.
+For blog viewers (both authenticated and unauthenticated), the primary focus is on readership and engagement with the content. This is reflected directly on the homepage, which surfaces blog articles listed by date posted and is paginated. 
+The top navigation is straight-forward and enables users to sign up, or login (or log out, where relevant). 
+On posts meanwhile, users are drawn through the article with engagement functions at the end including an intuitive heart icon to like/unlike a post and a clearly laid out comments box to create a comment.
+Blog administrators (authenticated users) meanwhile see additional optionality provided to them natively within the blog pages, including the ability to edit posts directly from the post page.
+The administration UX is similarly straightforward and creating a post is a guided process with several boxes for title, content, attachment, etc. centered on the page to maximise focus. Similarly, additional functions such as deleting a post, approving comments, etc. are simple one-click actions nested natively within the blog. 
+Lastly, the user profiles allow for at-a-glance understanding of the blog user or author, so readers can quickly learn more about them. Meanwhile, for those users, the profile can be edited easily within the same page by selecting to edit the profile. 
+
+
+## Design
+
+
+**Colour Scheme**
+
+The colour scheme for this blog prioritizes white for background, and varying shades of grey within title boxes, etc. in order to ensure ease of reading, and place the focus on the content.
+
+
+**Typography**
+
+
+No font was chosen for this programme.
+
+
+**Imagery**
+No imagery exists within the programme
+
+
+## Features
+
+- Clear navigation and button labels to relevant functions, dependent on authentication status.
+
+
+- Ability for users to register an account, login and logout.
+
+
+- Ability for users to create a profile for display on the blog, and to be able to edit this profile when necessary.
+
+
+- Ability for authenticated users within the administration area to create a post, edit a post, delete a post, and create a draft.
+
+
+- Authenticated users can review and approve blog post comments.
+
+
+- Both authenticated and unauthenticated users can view posts, view lists of posts, like and unlike posts, and create a comment on a specific blog post. 
+
+
+- The site is also responsive and displays across multiple different device and screen types; and includes pagination
 
 
 
-Welcome Vannesha,
+## Technologies Used
+- Heroku
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+- GitPod
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+- Github
 
-## Gitpod Reminders
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Technologies Used
 
-`python3 -m http.server`
+**GIT**
 
-A blue button should appear to click: _Make Public_,
+GIT was used for version control and utilising the Gitpod terminal to commit to Git and push to Github.
 
-Another blue button should appear to click: _Open Browser_.
+**GitHub**
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
 
-A blue button should appear to click: _Make Public_,
+Github is used to store the projects code after being pushed from Git.
+Github Projects was used to evidence of agile methodologies used during the project.
 
-Another blue button should appear to click: _Open Browser_.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+**Slack Channel**
 
-To log into the Heroku toolbelt CLI:
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+Slack was used to communicate with other coders, and tutors to resolve issues which I was facing with the project.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
 
-------
+**Heroku**
 
-## Release History
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+Heroku was used to deploy the project.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+## Testings
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+The PEP8 Validator was used to validate the code of the project to ensure there were no errors in the project.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+The PEP8 Validator was used to validate the code of the project to ensure there were no errors in the project.
+PEP Online Validator-
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+Result : "All Right"
+In addition to that, I was also using the console to ensure that there were no errors in the whole duration of the project.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+**Add Post Test**
+1. Navigated to "Add Post" page
+2. Entered data Title: Post 1, Content: ABC etc. 
+3. Clicked submit, or whatever you called the button
+4. Navigated to Home page and saw the new post present
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+**Edit Post Test**
+1. Navigated to Post 1
+2. Changed content value to DEF, clicked edit
+3. Navigated to Home Page
+4. Saw that the content value had changed
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+**Delete Post**
+1. Navigated to Post 1
+2. Changed content value to DEF, clicked delete
+3. Navigated to Home Page
+4. Saw that the content has been deleted
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+**View Comments**
+1. Created a comment
+1. Created a comment
+2. Entered comment 'test',
+3. Navigated to Admin page
+4. Approved comment
+4. Saw that the comment was shown on page
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+**Approve Comments**
+1. Created a comment
+2. Entered comment 'test',
+3. Navigated to Admin page
+4. Approved comment
+4. Saw that the comment was shown on page
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+****
 
-------
+**Like and Unlike Post**
+1. Navigated to "Post" page
+2. Clicked on Like button
+3. The heart lighted up and the likes was shown as '1'
 
-## FAQ about the uptime script
 
-**Why have you added this script?**
+**Unlike Post**
+1. Navigated to "Post" page
+2. Clicked on Unlike button
+3. The heart lighted up and the likes was shown as '0'
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+**Account Registration**
 
-**How will this affect me?**
+1. Navigated to the "Sign Up" button
+2. Entered details as requested
+3, Navigated to the admin page
+4. User was indicated as created
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+**Account Login**
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+1. Navigated to the "Login" button
+2. Entered details as requested
+3, User was logged in and was able to view post, edit post and delete post
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+**Account Logout**
+1. Navigated to the "Sign Out" button
+2. A re-confirmation message was received
+3. Once clicked, user was signed out
 
-**So….?**
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+**User Profile**
+1. Navigated to the "User Profile" button
+2. Information was displayed as entered
 
-**Can I opt out?**
+**Edit User Profile**
+1. Navigated to the "Edit profile" button
+2. Information was chnaged and 'Saved'
+3. Navigated to the "User Profile" button
+4. Information was displayed as entered
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+## Accessibility
 
-**Anything more?**
+The project can be accessed using Heroku.
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
 
----
+## Bugs
 
-Happy coding!
+There were no known bugs at the time of final deployment.
+
+
+## Issues Faced during the project
+
+- Trying to create the Profile.form
+- Final Git Push for the project
+
+
+## Credits and references
+
+- https://www.flake8rules.com/
+- https://www.geeksforgeeks.org/
+- https://realpython.com/python-operators-expressions/
+- https://getbootstrap.com/docs/4.0/components/buttons/
+
+

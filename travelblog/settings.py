@@ -17,11 +17,7 @@ import dj_database_url
 if os.path.isfile('env.py'):
     import env
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 4613e5313a0deae7119a7776878a763903db640f
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+#Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 

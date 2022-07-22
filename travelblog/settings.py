@@ -23,6 +23,8 @@ if os.path.isfile('env.py'):
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
+CSRF_TRUSTED_ORIGINS = ['https://8000-vannesha202-asiantravel-jmflv5s67l5.ws-eu54.gitpod.io',"https://asiantravel.herokuapp.com/"]
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/

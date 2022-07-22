@@ -86,7 +86,7 @@ class AddPostView(generic.CreateView):
 
     model = BlogPostModel
     template_name = 'add_post.html'
-    fields = ['title', 'content', 'excerpt', 'status', 'spotlight_image']
+    fields = ['title', 'content', 'excerpt', 'slug', 'status', 'spotlight_image']
     success_url = '/'
 
     def form_valid(self, form): 

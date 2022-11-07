@@ -1,17 +1,25 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-<strong>
-    <br/><br/>
-        <div class="form-group"></div>
-            <form class = "d-inline" action="{% url 'delete_post' blog %}" method="POST">
-                {% csrf_token %}
-                <strong>Are you sure?!</strong>
-                <br>
-                <button class="btn btn-dark">Delete Post</button>
-            </form>
-            
+<div class="masthead.delete">
+    <div class="container">
+        <div class="row g-0">
+            <div class="col-md-10 masthead-delete">
+                <strong>
+                    <br/><br/>
+                        <div class="form-group">
+                            <form class = "d-inline" action="{% url 'delete_post' blog %}" method="POST">
+                                {% csrf_token %}
+                                <strong>Are you sure?!</strong>
+                                <br>
+                                <button class="btn btn-dark">Delete Post</button>
+                            </form>
+                        </div>
+                </strong>        
+            </div>     
         </div>
-</strong>
+    </div>
+</div>
+
+
 {% endblock %}

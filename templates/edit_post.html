@@ -2,16 +2,24 @@
 
 {% block content %}
 
-<strong>
-    <br/><br/>
-        <div class="form-group"></div>
-            <form class = "d-inline" action="{% url 'edit_post' blog %}" method="POST">
-                {% csrf_token %}
-                {{ form.as_p}}
-                
-                <button class="btn btn-dark">Edit Post</button>
-            </form>
-            
+<div class="masthead">
+    <div class="container">
+        <div class="row g-0">
+            <div class = "col-md-4"></div>
+                <div class="col-md-2 masthead-text">
+                <strong>
+                    <br/><br/>
+                        <div class="form-group"></div>
+                            <form class = "d-inline" action="{% url 'edit_post' blog %}" method="POST">
+                                {% csrf_token %}
+                                {{ form.as_p}}
+                                
+                                <button class="btn btn-outline-secondary">Edit Post</button>
+                            </form>
+                        </div>
+                </strong>         
+            </div>
         </div>
-</strong>
+    </div>
+</div>
 {% endblock %}

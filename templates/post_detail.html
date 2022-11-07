@@ -9,9 +9,13 @@
                 <h1 class="post-title">{{ post.title }}</h1>
                 <p class="post-subtitle">{{ post.author }} | {{ post.published_on }}</p>
                 <div>
+                    <button class="btn btn-outline-secondary" data-toggle="buttons" type="Submit">
                     <a href="{% url 'edit_post' post.slug %}">Edit Post</a>
+                    
+                    <button class="btn btn-outline-secondary" type="Submit">
                     <a href="{% url 'delete_post' post.slug %}">Delete Post</a>
                 </div>
+
             </div>
         </div>
     </div>
@@ -33,22 +37,26 @@
                                 {% csrf_token %}
                                 {% if liked %}
 
-                                <button type="submit" name= "blogpost_id" value="{{post.slug}}" class="btn-like"><i
+                                <button type="submit" class="btn btn-outline-secondary" name= "blogpost_id" value="{{post.slug}}" class="btn-like"><i
                                     class="fas fa-heart"></i></button>
 
                                 {% else %}
 
-                                <button type="submit" name= "blogpost_id" value="{{post.slug}}" class="btn-like"><i
+                                <button type="submit" class="btn btn-outline-secondary" name= "blogpost_id" value="{{post.slug}}" class="btn-like"><i
                                     class="far fa-heart"></i></button>
+                                    
 
                                 {% endif %}
+                                <br>
 
+                                <br>
                             </form>
                             {% else %}
                             <span class = "text-secondary"><i class="far fa-heart"></i></span>
                             {% endif %}
                             <span class="text-secondary"> {{ post.number_of_likes }}</span>
                         </strong>
+
                         
                     </div>
                     <div class="col-1">
@@ -96,7 +104,7 @@
                 <form method="post" style="margin-top: 1.3em;">
                     {{ comment_form | crispy }}
                     {% csrf_token %}
-                    <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+                    <button type="submit" class="btn btn-outline-secondary">Submit</button>
                 </form>
                 {% endif %}
                 {% endif %}

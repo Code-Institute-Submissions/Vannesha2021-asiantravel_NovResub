@@ -11,17 +11,6 @@
                 {% for post in blogpost_list %}
                 <div class="col-md-12">
                         <div class="card-body">
-                            <div class="image-container">
-                                {% if "placeholder" in post.spotlight_image.url %}
-                                <img class="card-img-top"
-                                    src="">
-                                    {% else %}
-                                    <img class="card-img-top" src=" {{ post.spotlight_image.url }}">
-                                    {% endif %}
-                                    <p class="author">Author: {{ post.author }}</p>
-                            </div>
-                        </div>
-
                         <a href="{% url 'post_detail' post.slug  %}" class="post-link">
                             <h2 class="card-title">{{ post.title }}</h2>
                             <p class="card-text">{{ post.excerpt }}</p>

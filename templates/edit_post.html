@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{% load i18n %}
+
+{% block head_title %}{% trans "Edited Post" %}{% endblock %}
+
 {% block content %}
 
 <div class="masthead">
@@ -13,6 +17,9 @@
                         <div class="form-group"></div>
                             <form class = "d-inline" action="{% url 'edit_post' blog %}" method="POST">
                                 {% csrf_token %}
+                                {% if redirect_field_value %}
+                                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+                                {% endif %}
                                 {{ form.as_p}}
                                 
                                 <button class="btn btn-outline-secondary">Edit Post</button>

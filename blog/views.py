@@ -16,11 +16,11 @@ class BlogPost(generic.ListView):
     fields = '__all__'
     
     def get_queryset(self):
-        user = self.request.user
-        if user.is_anonymous:
-            return BlogPostModel.objects.filter(status=1).order_by('-published_on')
-        else:
-            return BlogPostModel.objects.filter(status=1, author=user).order_by('-published_on')
+        # user = self.request.user
+        # if user.is_anonymous:
+        return BlogPostModel.objects.filter(status=1).order_by('-published_on')
+        # else:
+        #     return BlogPostModel.objects.filter(status=1, author=user).order_by('-published_on')
 
 
 class PostDetail(View):
@@ -120,6 +120,7 @@ class EditPostView(View):
         blog.excerpt = new_excerpt
         blog.status = new_status
         blog.save()
+        messages.success(request, 'Your post has been edited succesfully')
         return HttpResponseRedirect(reverse('edit_post', args=[slug]))
 
     def get(self, request, slug, *args, **kwargs):
@@ -200,7 +201,7 @@ class EditProfileView (View):
         user = self.request.user
         profile = ProfileModel.objects.get(user=user)
         form = ProfileForm (instance=profile)
-
+        
         return render(
             request,
             "edit_profile.html", 
@@ -223,12 +224,6 @@ class EditProfileView (View):
         profile.instagram = new_instagram
         profile.linkedin = new_linkedin
         profile.save()
+        messages.success(request, 'Your profile has been edited succesfully')
         return HttpResponseRedirect(reverse('edit_profile'))
-
-
-    
-
-
-
-
 

@@ -18,5 +18,5 @@ class ProfileForm(forms.ModelForm):
 class BlogForm(forms.ModelForm):
     class Meta:
         model = BlogPostModel
-        fields = ('title', 'content', 'excerpt', 'status', 'spotlight_image')
+        fields = ('title', 'content', 'excerpt', 'status')
 

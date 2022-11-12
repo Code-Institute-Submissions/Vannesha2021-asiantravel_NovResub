@@ -32,40 +32,41 @@
                             <p>{{user.email}}</p>
                         </div>
                     {% if user.profile.bio %}
-                    <div class="row ms-8">
-                        <div class="col-md-1">
-                            <label>Bio:</label>
-                            <textarea name="bio" cols="50" rows="10" id="id_bio">{{user.profile.bio}}
-                            </textarea>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label>Biodata:</label>
+                        </div>
+                        <div class="col-md-6">
+                            <textarea name="Bio" cols="50" rows="10" id="id_bio">{{user.profile.bio}}</textarea>
                         </div>
                     </div>
                     {% endif %}
                     {% if user.profile.linkedin %}
-                    <div class="row">
-                        <div class="col-md-6">
+                    <div class="row md">
+                        <div class="col-md-2">
                             <label>Linkedin:</label>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-2">
                             <p><a href="{{user.profile.linkedin}}">{{user.profile.linkedin}}</a></p>
                         </div>
                     </div>
                     {% endif %}
                     {% if user.profile.instagram %}
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-2">
                             <label>Instagram:</label>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-2">
                             <p><a href="{{user.profile.instagram}}">{{user.profile.instagram}}</a></p>
                         </div>
                     </div>
                     {% endif %}
                     {% if user.profile.facebook %}
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-2">
                             <label>Facebook:</label>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-2">
                             <p><a href="{{user.profile.facebook}}">{{user.profile.facebook}}</a></p>
                         </div>
                     </div>

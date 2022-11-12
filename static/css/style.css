@@ -7,20 +7,11 @@ body {
     background-color:#BBF0F3;
 }
 
-.navbarText {
-    font-size: 50px;
-}
-
 .card {
     background-color: transparent;
     padding-bottom: 10px;
     padding-left:5px;
 }
-
-.image-container {
-    position: relative;
-}
-
 
 .author {
     color: #445261;
@@ -34,7 +25,6 @@ body {
 .masthead {
     margin-top: 10px;
     text-transform: uppercase;
-  
 }
 
 .masthead-delete {
@@ -46,12 +36,6 @@ body {
     color: black;
     position: relative;
 }
-
-.h1-add-post {
-    color: black;
-    text-align: center;
-}
-
 
 .post-link {
     color: black;
@@ -79,7 +63,7 @@ body {
 .btn-signup {
     background-color: lightgray;
     color:black;
-    border: 2px solid BLUE;
+    border: 2px solid blue;
 }
 
 .btn-signup:hover,

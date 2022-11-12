@@ -19,10 +19,10 @@ Following development work, extensive testing and validation was carried out to 
 
 ## User Experience (UX)
 The Asian Travel blog is primarily designed for ease of navigation, readership and administration.
-For blog viewers (both authenticated and unauthenticated), the primary focus is on readership and engagement with the content. This is reflected directly on the homepage, which surfaces blog articles listed by date posted and is paginated. 
+For blog readers, the primary focus is on readership and engagement with the content. This is reflected directly on the homepage, which surfaces blog articles listed by date posted and is paginated. 
 The top navigation is straight-forward and enables users to sign up, or login (or log out, where relevant). 
 On posts meanwhile, users are drawn through the article with engagement functions at the end including an intuitive heart icon to like/unlike a post and a clearly laid out comments box to create a comment.
-Blog administrators (authenticated users) meanwhile see additional optionality provided to them natively within the blog pages, including the ability to edit posts directly from the post page.
+Blog administrators (authenticated users) meanwhile see additional optionality provided to them natively within the blog pages, including the ability to view and edit their own posts directly from the post page.
 The administration UX is similarly straightforward and creating a post is a guided process with several boxes for title, content, attachment, etc. centered on the page to maximise focus. Similarly, additional functions such as deleting a post, approving comments, etc. are simple one-click actions nested natively within the blog. 
 Lastly, the user profiles allow for at-a-glance understanding of the blog user or author, so readers can quickly learn more about them. Meanwhile, for those users, the profile can be edited easily within the same page by selecting to edit the profile. 
 
@@ -202,7 +202,8 @@ The project can be accessed using Heroku.
 
 ## Bugs
 
-There were no known bugs at the time of final deployment.
+There was one uncorrectable bug at the time of final deployment as below;
+1. Users creating a new account on sign up see a 500 Server Error upon submission of their credentials. This can be resolved by amending the Setting.py file code = ACCOUNT_EMAIL_VERIFICATION  = "none".
 
 
 ## Issues Faced during the project

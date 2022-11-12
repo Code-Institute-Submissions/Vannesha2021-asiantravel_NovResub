@@ -33,7 +33,7 @@ CSRF_TRUSTED_ORIGINS = ['https://8000-vannesha202-asiantravel-jmflv5s67l5.ws-eu5
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
@@ -60,6 +60,8 @@ INSTALLED_APPS = [
     'blog',
 
 ]
+
+ACCOUNT_EMAIL_VERIFICATION  = "none"
 
 SITE_ID = 1
 

@@ -2,16 +2,14 @@
 
 {% block content %}
 
-<div class="container-fluid">
+<div class="container">
     <div class="row">
 
         <!-- Blog Entries Column -->
-        <div class="col-12 mt-3 left">
+        <div class="row d-flex justify-content-center">
             <div class="row">
-            {% for post in blogpost_list %}
-                <div class="col-md-4">
-                    
-                    <div class="card mb-4">
+                {% for post in blogpost_list %}
+                <div class="col-md-12">
                         <div class="card-body">
                             <div class="image-container">
                                 {% if "placeholder" in post.spotlight_image.url %}
@@ -31,16 +29,13 @@
                         <hr />
                         <p class="card-text">{{ post.published_on}} <i class="far fa-heart"></i>
                                 {{ post.number_of_likes }}</p>
-                    </div>
                 </div>
-            </div>
-            {% if forloop.counter|divisibleby:3 %}
-        </div>
-            <div class="row">
-            {% endif %}
-            {% endfor %}
-
-            </div>
+                    {% if forloop.counter|divisibleby:3%}
+                    <div class="row">
+                    {% endif %}
+                    {% endfor %}
+                    </div>
+            </div>  
         </div>
     </div>
 

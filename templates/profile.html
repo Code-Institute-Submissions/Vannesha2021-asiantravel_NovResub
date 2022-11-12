@@ -9,35 +9,34 @@
                 <div class="tab-pane">
                     <br><br>
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-2">
                             <label>Username:</label>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-2">
                             <p>{{user}}</p>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-2">
                             <label>Full Name:</label>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <p>{{user.get_full_name}}</p>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-2">
                             <label>Email:</label>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <p>{{user.email}}</p>
                         </div>
                     {% if user.profile.bio %}
-                    <div class="row">
-                        <div class="col-md-6">
+                    <div class="row ms-8">
+                        <div class="col-md-1">
                             <label>Bio:</label>
-                        </div>
-                        <div class="col-md-6">
-                            <p>{{user.profile.bio}}</p>
+                            <textarea name="bio" cols="50" rows="10" id="id_bio">{{user.profile.bio}}
+                            </textarea>
                         </div>
                     </div>
                     {% endif %}

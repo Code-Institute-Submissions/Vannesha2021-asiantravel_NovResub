@@ -2,19 +2,25 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.contrib import messages
+from django.contrib.auth.models import User
 from .models import BlogPost as BlogPostModel
 from .models import Profile as ProfileModel
 from .forms import CommentForm, BlogForm, ProfileForm
 from django.utils.text import slugify
 
 
-
 class BlogPost(generic.ListView):
     model = BlogPostModel
-    queryset = BlogPostModel.objects.filter(status=1).order_by('-published_on')
     template_name = "index.html"
     paginate_by = 6
     fields = '__all__'
+    
+    def get_queryset(self):
+        user = self.request.user
+        if user.is_anonymous:
+            return BlogPostModel.objects.filter(status=1).order_by('-published_on')
+        else:
+            return BlogPostModel.objects.filter(status=1, author=user).order_by('-published_on')
 
 
 class PostDetail(View):
@@ -28,11 +34,11 @@ class PostDetail(View):
 
         return render(
             request,
-            "post_detail.html", 
+            "post_detail.html",
             {
                 "post": post,
                 "comments": comments,
-                "commented":False,
+                "commented": False,
                 "liked": liked,
                 "comment_form": CommentForm()
             },
@@ -86,11 +92,11 @@ class AddPostView(generic.CreateView):
 
     model = BlogPostModel
     template_name = 'add_post.html'
-    fields = ['title', 'content', 'excerpt', 'slug', 'status', 'spotlight_image']
+    fields = ['title', 'content', 'excerpt', 'status']
     success_url = '/'
 
     def form_valid(self, form): 
-        """ adding the username automatically for the post """ 
+        """ adding the username automatically for the post """
         form.instance.author = self.request.user 
         return super().form_valid(form)
 
@@ -110,6 +116,9 @@ class EditPostView(View):
         new_excerpt = request.POST["excerpt"]
         new_status = request.POST["status"]
         blog.content=new_content
+        blog.title = new_title
+        blog.excerpt = new_excerpt
+        blog.status = new_status
         blog.save()
         return HttpResponseRedirect(reverse('edit_post', args=[slug]))
 
@@ -161,6 +170,10 @@ class Profile (View):
     def get (self, request):
         user=self.request.user
         context = {"user": user}
+        try:
+            ProfileModel.objects.get(user=user)
+        except:
+            ProfileModel.objects.create(user=user)
         return render (request, 'profile.html', context)
 
     def post (self, request, user, *args, **kwargs):

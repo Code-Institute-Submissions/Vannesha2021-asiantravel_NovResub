@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 from django.utils.text import slugify
 
+
 STATUS = ((0, "Draft"), (1, "Published"))
 
 
@@ -24,8 +25,10 @@ class BlogPost(models.Model):
     likes = models.ManyToManyField(
         User, related_name='blog_likes', blank=True)
 
-class Meta:
-    ordering = ['-published_on']
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+        return super().save(*args, **kwargs)
 
     def __str__(self):
         return self.title
@@ -33,10 +36,8 @@ class Meta:
     def number_of_likes(self):
         return self.likes.count()
 
-    def save(self, *args, **kwargs):
-        if not self.slug:
-            self.slug = slugify(self.title)
-        return super().save(*args, **kwargs)
+class Meta:
+    ordering = ['-published_on']
 
 
 class Comment(models.Model):

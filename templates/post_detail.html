@@ -4,17 +4,19 @@
 
 <div class="masthead">
     <div class="container">
-        <div class="row g-0">
-            <div class="col-md-6 masthead-text">
+        <div class="row g-15">
+            <div class="col-md-4 masthead-text">
                 <h1 class="post-title">{{ post.title }}</h1>
                 <p class="post-subtitle">{{ post.author }} | {{ post.published_on }}</p>
-                <div>
-                    <button class="btn btn-outline-secondary" data-toggle="buttons" type="Submit">
-                    <a href="{% url 'edit_post' post.slug %}">Edit Post</a>
-                    
-                    <button class="btn btn-outline-secondary" type="Submit">
-                    <a href="{% url 'delete_post' post.slug %}">Delete Post</a>
-                </div>
+                {% if request.user.is_anonymous == False %}
+                    <div>
+                        <button class="btn btn-outline-secondary" data-toggle="buttons" type="Submit">
+                        <a href="{% url 'edit_post' post.slug %}">Edit Post</a>
+                        
+                        <button class="btn btn-outline-secondary" type="Submit">
+                        <a href="{% url 'delete_post' post.slug %}">Delete Post</a>
+                    </div>
+                {% endif %}
 
             </div>
         </div>

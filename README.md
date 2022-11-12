@@ -4,7 +4,7 @@
 ## Introduction
 With the Asian Travel blog, users benefit from a wide range of extensive functionality.
 
-Users can register for an account, login, logout, and perform wide-ranging blog administrative tasks including creating a post, creating a draft, delete and manage posts, approve comments and of course delete posts. Users can also have a profile, which can be created and edited, and displayed to other users. Unauthenticated users meanwhile are able to view and open posts, view comments, comment, like and unlike posts, view a list of posts, and search for a specific post. 
+Users can register for an account, login, logout, and perform wide-ranging blog administrative tasks including creating a post, creating a draft, delete and manage posts, approve comments and of course delete posts. Users can also have a profile, which can be created and edited, and displayed to other users. Unauthenticated users meanwhile are able to view and open posts, view comments, comment, like and unlike posts, view a list of posts.
 
 ## Built with
 Python & Django
@@ -32,7 +32,7 @@ Lastly, the user profiles allow for at-a-glance understanding of the blog user o
 
 **Colour Scheme**
 
-The colour scheme for this blog prioritizes white for background, and varying shades of grey within title boxes, etc. in order to ensure ease of reading, and place the focus on the content.
+The colour scheme for this blog prioritizes light blue for the background, and varying shades of grey within title boxes, etc. in order to ensure ease of reading, and place the focus on the content.
 
 
 **Typography**
@@ -100,6 +100,10 @@ Slack was used to communicate with other coders, and tutors to resolve issues wh
 
 
 Heroku was used to deploy the project.
+
+**Heroku PostgreSQL add-on**
+
+Postgres was used to store the blog posts, likes and comments.  
 
 
 ## Testings
@@ -205,6 +209,18 @@ There were no known bugs at the time of final deployment.
 
 - Trying to create the Profile.form
 - Final Git Push for the project
+
+## Deployment
+
+- This blog was deployed using Heroku, the steps of deployment are as follows:
+
+1) Create the Heroku app and give the project a name.
+2) Attach the Heroku Postgres database
+3) Prepared the environment and settings.py file. 
+4) Get the static and media files stored on Cloudinary.
+5) Import the operating system library in the env.py file and Heroku in the config vars.
+6) Deployment was then completed.
+
 
 
 ## Credits and references

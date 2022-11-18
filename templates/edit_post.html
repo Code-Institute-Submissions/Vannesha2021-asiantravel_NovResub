@@ -10,9 +10,10 @@
     <div class="container">
         <div class="row g-0">
             <div class = "col-md-4"></div>
-                <div class="col-md-2 masthead-text">
+                <div class="col-md-3 masthead-text">
                 <strong>
-                    
+                    <br/><br/>
+                    <h1 class="edit" id="edit">Edit Post</h1> 
                     <br/><br/>
                         <div class="form-group"></div>
                             <form class = "d-inline" action="{% url 'edit_post' blog %}" method="POST">
@@ -22,7 +23,7 @@
                                 {% endif %}
                                 {{ form.as_p}}
                                 
-                                <button class="btn btn-outline-secondary">Edit Post</button>
+                                <button class="btn btn-secondary">Edit Post</button>
                             </form>
                         </div>
                 </strong>         

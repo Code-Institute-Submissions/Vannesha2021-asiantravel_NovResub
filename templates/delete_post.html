@@ -3,16 +3,17 @@
 {% block content %}
 <div class="masthead.delete">
     <div class="container">
-        <div class="row g-0">
-            <div class="col-md-10 masthead-delete">
+            <div class="row g-0">
+                <div class = "col-md-4"></div>
+                    <div class="col-md-3 masthead-text">
                 <strong>
                     <br/><br/>
                         <div class="form-group">
                             <form class = "d-inline" action="{% url 'delete_post' blog %}" method="POST">
                                 {% csrf_token %}
-                                <strong>Are you sure?!</strong>
+                                <h1 class="edit" id="edit">Are you sure?</h1> 
                                 <br>
-                                <button class="btn btn-dark">Delete Post</button>
+                                <button class="btn btn-secondary">Delete Post</button>
                             </form>
                         </div>
                 </strong>        

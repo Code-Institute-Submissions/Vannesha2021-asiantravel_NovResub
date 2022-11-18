@@ -4,19 +4,29 @@
 {% block head_title %}{% trans "Profile" %}{% endblock %}
 
 {% block content %}
-
-<strong>
-    <br/><br/>
-    <div class="col text-center">
-        <div class="form-group">
-            <form class = "d-inline" action="{% url 'edit_profile' %}" method="POST">
-                {% csrf_token %}
-                {{ form.as_p}}
-                {% if redirect_field_value %}
-                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-                {% endif %}
-                <button class="btn btn-outline-secondary" type="Submit">{% trans "Edit Profile" %}</button>
-            </form>
+<div class="masthead">
+    <div class="container">
+        <div class="row g-0">
+            <div class = "col-md-4"></div>
+                    <strong>
+                        <br/><br/>
+                        <div class="col text-center">
+                            <h1 class="edit" id="edit">Edit Profile</h1> 
+                            <br>
+                            <div class="form-group">
+                                <form class = "d-inline" action="{% url 'edit_profile' %}" method="POST">
+                                    {% csrf_token %}
+                                    {{ form.as_p}}
+                                    {% if redirect_field_value %}
+                                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                                    {% endif %}
+                                    <button class="btn btn-outline-secondary" type="Submit">{% trans "Edit Profile" %}</button>
+                                </form>
+                            </div>
+                        </div>
+                    </strong>
+                </div>      
         </div>
     </div>
+</div>
 {% endblock %}

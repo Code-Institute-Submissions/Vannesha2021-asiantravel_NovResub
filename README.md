@@ -4,17 +4,22 @@
 ## Introduction
 With the Asian Travel blog, users benefit from a wide range of extensive functionality.
 
-Users can register for an account, login, logout, and perform wide-ranging blog administrative tasks including creating a post, creating a draft, delete and manage posts, approve comments and of course delete posts. Users can also have a profile, which can be created and edited, and displayed to other users. Unauthenticated users meanwhile are able to view and open posts, view comments, comment, like and unlike posts, view a list of posts.
+Users can perform a number of actions including; register for an account, login, logout, and perform the full suite of CRUD administrative tasks including creating a post, creating and saving a draft, delete, edit and manage posts, and approve comments. 
+
+Users can also have a profile, which can be created and edited, and displayed to other users. Unauthenticated users meanwhile are able to view and open posts, view comments, comment, and view a list of posts.
+
 
 ## Built with
 Python & Django
 
+
 ## Built with
 
-This project began with firstly generating the concept for the blog, before ideating the desirable user experience, actions and features - and the feasibility thereof. 
-Following this, a high-level technical approach and interdependency mapping was carried out that would allow all necessary functionality to be created and included within the product, and identify areas of functionality overlap within the blog.
+This project began with firstly ideating on, and generating the concept for the blog. 
+From there, a study was carried out across similar blogs available online to help inform desirable user experience, actions and features - and the feasibility thereof. 
+Following this, a high-level technical approach and dependency mapping was carried out that would allow all necessary functionality creation to be verified in terms of feasibility and viability. At this stage, work was also undertaken to identify areas of functionality overlap within the blog.
 The high-level technical approach permitted the decomposition of the work into user stories, which were created thus enabling development to commence. 
-Following development work, extensive testing and validation was carried out to ensure code hygiene, performance and functionality for users. 
+Following development work, extensive end-to-end testing and validation was carried out to ensure code hygiene, performance and functionality for users. 
 
 
 ## User Experience (UX)
@@ -32,17 +37,17 @@ Lastly, the user profiles allow for at-a-glance understanding of the blog user o
 
 **Colour Scheme**
 
-The colour scheme for this blog prioritizes light blue for the background, and varying shades of grey within title boxes, etc. in order to ensure ease of reading, and place the focus on the content.
+The colour scheme for this blog emphasises light blue to dark blue gradient as the primary background colour, and black as the primary text colour in order to ensure ease of reading, and place the focus on the content.
 
 
 **Typography**
 
 
-No font was chosen for this programme.
+Roboto from Google Fonts was chosen for this programme.
 
 
 **Imagery**
-No imagery exists within the programme
+No imagery exists within the programme.
 
 
 ## Features
@@ -59,10 +64,10 @@ No imagery exists within the programme
 - Ability for authenticated users within the administration area to create a post, edit a post, delete a post, and create a draft.
 
 
-- Authenticated users can review and approve blog post comments.
+- Authenticated users can review and approve blog post comments, like and unlike posts, and create a comment on a specific blog post.
 
 
-- Both authenticated and unauthenticated users can view posts, view lists of posts, like and unlike posts, and create a comment on a specific blog post. 
+- Both authenticated and unauthenticated users can view posts, view comments on specific blog posts and view like counts on specific posts. 
 
 
 - The site is also responsive and displays across multiple different device and screen types; and includes pagination
@@ -77,7 +82,7 @@ No imagery exists within the programme
 - Github
 
 
-## Technologies Used
+## Description of the technologies Used
 
 **GIT**
 
@@ -115,6 +120,8 @@ PEP Online Validator-
 
 Result : "All Right"
 In addition to that, I was also using the console to ensure that there were no errors in the whole duration of the project.
+
+## Further Testings
 
 **Add Post Test**
 1. Navigated to "Add Post" page
@@ -155,13 +162,13 @@ In addition to that, I was also using the console to ensure that there were no e
 ****
 
 **Like and Unlike Post**
-1. Navigated to "Post" page
+1. Navigated to "Post" page as an authenticated logged-in user
 2. Clicked on Like button
-3. The heart lighted up and the likes was shown as '1'
+3. The heart lighted up and the likes count was shown as '1'
 
 
 **Unlike Post**
-1. Navigated to "Post" page
+1. Navigated to "Post" page as an authenticated logged-in user
 2. Clicked on Unlike button
 3. The heart lighted up and the likes was shown as '0'
 
@@ -195,6 +202,72 @@ In addition to that, I was also using the console to ensure that there were no e
 4. Information was displayed as entered
 
 
+## Images of the programme
+
+**Homepage**
+
+
+![Homepage](/static/css/images/homepage.JPG)
+
+
+**Post Details Page as a non logged in user**
+
+
+![Post Details Page](/static/css/images/post-page1.JPG)
+
+
+**Sign Up Page**
+
+
+![Sign Up Page](/static/css/images/sign-up-page.JPG)
+
+
+**Logout Page**
+
+
+![Sign Out Page](/static/css/images/sign-out-page.JPG)
+
+
+**Add Blog Post Page**
+
+
+![Sign Out Page](/static/css/images/add-blogpost-page.JPG)
+
+
+**Post Details Page as a logged in user (blogger)**
+
+
+![Post Detail Page](/static/css/images/post-page2.JPG)
+
+
+**Edit post page**
+
+
+![Edit Post Page](/static/css/images/edit-post-page.JPG)
+
+
+**Delete post page**
+
+
+![Delete Post Page](/static/css/images/delete-post-page.JPG)
+
+
+**Initial Profile Page**
+
+
+![Initial Profile Page](/static/css/images/initial-profile-page.JPG)
+
+
+**Updated and edited profile page**
+
+
+![Updated and Edited Profile Page](/static/css/images/completed-profile-page.JPG)
+
+**Edit Profile page**
+
+![Updated and Edited Profile Page](/static/css/images/edit-profile-page.JPG)
+
+
 ## Accessibility
 
 The project can be accessed using Heroku.
@@ -203,7 +276,7 @@ The project can be accessed using Heroku.
 ## Bugs
 
 There was one uncorrectable bug at the time of final deployment as below;
-1. Users creating a new account on sign up see a 500 Server Error upon submission of their credentials. This can be resolved by amending the Setting.py file code = ACCOUNT_EMAIL_VERIFICATION  = "none".
+1. In the sign-up process, users see a 500 Server Error upon entering their credentials, but this problem has been resolved.
 
 
 ## Issues Faced during the project

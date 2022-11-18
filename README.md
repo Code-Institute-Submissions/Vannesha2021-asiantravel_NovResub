@@ -72,6 +72,15 @@ No imagery exists within the programme.
 
 - The site is also responsive and displays across multiple different device and screen types; and includes pagination
 
+- Upon will receive notification when they have :
+    1) Logged in to their account
+    2) Logged out from their account
+    3) Edited a post
+    4) Edited their profile content
+    5) Commented on a post.
+
+
+- Additionally, the admin of the site has to login and approve user's comments to avoid any scam/marketting comments to decrease the quality of the blog.
 
 
 ## Technologies Used
